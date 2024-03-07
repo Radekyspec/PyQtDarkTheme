@@ -1,3 +1,10 @@
+# Fork Purpose
+
+This repository performs the following:
+
+- Includes fixes to run on newer Python versions
+- Publishes to PyPi as `pyqtdarktheme-fork`
+
 # PyQtDarkTheme
 
 PyQtDarkTheme applies a flat dark theme to QtWidgets application. There's a light theme too. Color balanced from the dark theme for easy viewing in daylight.
@@ -36,7 +43,7 @@ Check out the [complete documentation](https://pyqtdarktheme.readthedocs.io).
 
 ## Requirements
 
-- [Python 3.7+](https://www.python.org/downloads/)
+- [Python 3.8+](https://www.python.org/downloads/)
 - Qt 5.15+
 - PySide6, PyQt6, PyQt5 or PySide2
 
@@ -45,7 +52,7 @@ Check out the [complete documentation](https://pyqtdarktheme.readthedocs.io).
 - Last released version
 
    ```plaintext
-   pip install pyqtdarktheme
+   pip install pyqtdarktheme-fork
    ```
 
 - Latest development version
