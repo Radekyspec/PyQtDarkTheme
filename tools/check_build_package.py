@@ -32,9 +32,9 @@ def _main() -> None:
         logging.info("The package version, module version and tag version are the same.")
     else:
         logging.info("The version names of package and tag are different.")
-        logging.info("tag version(GitHub tags)         : ", git_tag_v)
-        logging.info("package version(pyproject.toml)  : ", package_v)
-        logging.info("module version(__version__)      : ", qdarktheme.__version__)
+        logging.info("tag version(GitHub tags)         : %s", git_tag_v)
+        logging.info("package version(pyproject.toml)  : %s", package_v)
+        logging.info("module version(__version__)      : %s", qdarktheme.__version__)
         sys.exit(1)
 
     _test_qdarktheme()

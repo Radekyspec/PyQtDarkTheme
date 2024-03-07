@@ -46,11 +46,11 @@ jobs:
           repository-url: https://test.pypi.org/legacy/
 
       - name: Waite until package is published
-        run: sleep 120
+        run: sleep 180
 
       - name: Test testPyPI package
         run: |
-          pip install -i https://test.pypi.org/simple/ pyqtdarktheme-fork
+          pip install -i https://test.pypi.org/simple/ pyqtdarktheme-fork==${{ steps.tag.outputs.version }}
           python tools/check_build_package.py \
             --tag-version ${{ steps.tag.outputs.version }}
 
