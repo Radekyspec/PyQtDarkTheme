@@ -37,11 +37,10 @@ jobs:
             --tag-version ${{ steps.tag.outputs.version }}
           python -m pip uninstall -y pyqtdarktheme-fork
 
-      - name: Publish to testPyPI
-        run: |
-          poetry config repositories.testpypi https://test.pypi.org/legacy/
-          poetry config pypi-token.testpypi ${{ secrets.TEST_PYPI_TOKEN }}
-          poetry publish -r testpypi
+      - name: Publish 📦 to TestPyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
 
       - name: Waite until package is published
         run: sleep 120
@@ -59,7 +58,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           draft: false
 
-      - name: Publish to PyPI
-        run: |
-          poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
-          poetry publish
+      - name: Publish 📦 to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+
