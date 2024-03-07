@@ -10,6 +10,9 @@ jobs:
   Release:
     runs-on: ubuntu-latest
 
+    permissions:
+      id-token: write
+      
     steps:
       - uses: actions/checkout@v3
       - uses: tlambert03/setup-qt-libs@v1

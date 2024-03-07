@@ -27,7 +27,7 @@ def _test_qdarktheme() -> None:
 def _main() -> None:
     args = _parse_args()
     git_tag_v: str = args.tag_version.replace("v", "")
-    package_v = version("pyqtdarktheme")
+    package_v = version("pyqtdarktheme-fork")
     if git_tag_v == package_v == qdarktheme.__version__:
         logging.info("The package version, module version and tag version are the same.")
     else:
