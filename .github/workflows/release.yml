@@ -13,7 +13,7 @@ jobs:
     permissions:
       id-token: write
       contents: write
-      
+
     steps:
       - uses: actions/checkout@v3
       - uses: tlambert03/setup-qt-libs@v1
@@ -50,7 +50,8 @@ jobs:
 
       - name: Test testPyPI package
         run: |
-          pip install -i https://test.pypi.org/simple/ pyqtdarktheme-fork==${{ steps.tag.outputs.version }}
+          pip install -i https://test.pypi.org/simple/ \
+            pyqtdarktheme-fork==${{ steps.tag.outputs.version }}
           python tools/check_build_package.py \
             --tag-version ${{ steps.tag.outputs.version }}
 
@@ -63,4 +64,3 @@ jobs:
 
       - name: Publish 📦 to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
-
