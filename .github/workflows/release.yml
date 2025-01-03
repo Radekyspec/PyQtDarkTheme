@@ -40,22 +40,6 @@ jobs:
             --tag-version ${{ steps.tag.outputs.version }}
           python -m pip uninstall -y pyqtdarktheme-fork
 
-      - name: Publish 📦 to TestPyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          repository-url: https://test.pypi.org/legacy/
-          attestations: false
-
-      - name: Waite until package is published
-        run: sleep 180
-
-      - name: Test testPyPI package
-        run: |
-          pip install -i https://test.pypi.org/simple/ \
-            pyqtdarktheme-fork==${{ steps.tag.outputs.version }}
-          python tools/check_build_package.py \
-            --tag-version ${{ steps.tag.outputs.version }}
-
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
